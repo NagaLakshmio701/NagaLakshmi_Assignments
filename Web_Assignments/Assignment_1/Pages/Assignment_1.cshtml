@@ -1,0 +1,16 @@
+﻿@page
+@model Assignment_1.Pages.Assignment_1Model
+@{
+}
+<div class="container">
+    <form method="post">
+        <label>ENTER NAME  </label> 
+        <input type="text" asp-for=@Model.Name />
+        <br />
+        <label>ENTER PASSWORD</label>
+        <input type="password" asp-for=@Model.Password />
+        <br />
+        <h3>@Model.Message</h3>
+        <button >Submit</button>
+    </form>
+</div>
