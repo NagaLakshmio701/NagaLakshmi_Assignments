@@ -1,0 +1,67 @@
+﻿@page
+@model HandsOnModel.Pages.Index1Model
+@{
+}
+
+<div>
+    <form method="post">
+        <table class="table">
+            <tr>
+                <td>ENTER BOOK ID</td>
+                <td><input type="number" asp-for="B.Id" /></td> 
+            </tr>
+            <tr>
+                <td>ENTER BOOK NAME</td>
+                <td><input type="text" asp-for="B.Name" /></td>
+            </tr>
+            <tr>
+                <td>ENTER BOOK PRICE</td>
+                <td><input type="number" asp-for="B.Price" /></td>
+            </tr>
+            <tr>
+                <td>ENTER BOOK LANGUAGE</td>
+                <td>
+                    <select asp-for="B.Language">
+                        <option>TELUGU</option>
+                        <option>ENGLISH</option>
+                        <option>TAMIL</option>
+                        <option>HINDI</option>
+                        <option>KANNADA</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>ENTER BOOK AUTHOR</td>
+                <td><input type="text" asp-for="B.Author" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="ADD" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>BOOK ID</th>
+                <th>NAME</th>
+                <th>PRICE</th>
+                <th>LANGUAGE</th>
+                <th>AUTHOR</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model.List)
+            {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.Name</td>
+                    <td>@book.Price</td>
+                    <td>@book.Language</td>
+                    <td>@book.Author</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
