@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC_ASSIGNMENT_VALIDATION", "MVC_ASSIGNMENT_VALIDATION.csproj", "{C32D31B5-B750-47C5-ACE3-739943962310}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C32D31B5-B750-47C5-ACE3-739943962310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C32D31B5-B750-47C5-ACE3-739943962310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C32D31B5-B750-47C5-ACE3-739943962310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C32D31B5-B750-47C5-ACE3-739943962310}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF20F910-09DE-43A5-9A60-284E4267E0A7}
+	EndGlobalSection
+EndGlobal

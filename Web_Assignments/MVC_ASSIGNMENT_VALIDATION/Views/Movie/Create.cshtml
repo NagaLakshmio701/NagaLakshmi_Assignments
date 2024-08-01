@@ -1,0 +1,47 @@
+﻿@model HandsOnModels.Models.Movie
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <form asp-action="Create" method="post">
+        <table class="table">
+            <tr>
+                <td>MovieId</td>
+                <td>
+                    <input type="number"required asp-for="MovieId" />
+                </td>
+            </tr>
+            <tr>
+                <td>Title</td>
+                <td>
+                    <input type="text" required asp-for="Title"  />
+                </td>
+            </tr>
+            <tr>
+                <td>Actor</td>
+                <td>
+                    <input type="text"required asp-for="Actor"  />
+                </td>
+            </tr>
+            <tr>
+                <td>Lang</td>
+                <td>
+                    <input type="text" asp-for="Lang"  />
+                </td>
+            </tr>
+            <tr>
+                <td>Director</td>
+                <td>
+                    <input type="text" asp-for="Director"  />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Create" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

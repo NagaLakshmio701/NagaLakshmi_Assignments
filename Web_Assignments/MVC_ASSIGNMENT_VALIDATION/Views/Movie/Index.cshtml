@@ -1,0 +1,36 @@
+﻿@model List<HandsOnModels.Models.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <a asp-action="Create">Create New</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>MovieId</th>
+                <th>Title</th>
+                <th>Actor</th>
+                <th>Lang</th>
+                <th>Director</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MovieId</td>
+                    <td>@item.Title</td>
+                    <td>@item.Actor</td>
+                    <td>@item.Lang</td>
+                    <td>@item.Director</td>
+                    <td>
+                        <a asp-action="Details" asp-route-name="@item.Title" >More details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
