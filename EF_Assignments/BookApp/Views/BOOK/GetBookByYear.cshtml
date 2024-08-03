@@ -1,0 +1,49 @@
+﻿@model List< BookApp.Entities.Book>
+
+@{
+    ViewData["Title"] = "GetBookByYear";
+}
+
+<h1>GetBookByYear</h1>
+@foreach(var book in Model){
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => book.BookName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => book.BookName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => book.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => book.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => book.Author)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => book.Author)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => book.Lang)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => book.Lang)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => book.ReleaseDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => book.ReleaseDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@book?.BookId">Edit</a> |
+    <a asp-action="GetAllBooks">Back to List</a>
+</div>
+}

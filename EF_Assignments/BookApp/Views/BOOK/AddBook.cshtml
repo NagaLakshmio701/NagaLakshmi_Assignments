@@ -1,0 +1,58 @@
+﻿@model BookApp.Entities.Book
+
+@{
+    ViewData["Title"] = "AddBook";
+}
+
+<h1>AddBook</h1>
+
+<h4>Book</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddBook">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BookId" class="control-label"></label>
+                <input asp-for="BookId" class="form-control" />
+                <span asp-validation-for="BookId" required class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookName" class="control-label"></label>
+                <input asp-for="BookName" class="form-control" />
+                <span asp-validation-for="BookName" required class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" required class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class="control-label"></label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" required class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lang" class="control-label"></label>
+                <input asp-for="Lang" class="form-control" />
+                <span asp-validation-for="Lang" required class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReleaseDate" class="control-label"></label>
+                <input asp-for="ReleaseDate" class="form-control" />
+                <span asp-validation-for="ReleaseDate" required class="text-danger"></span>
+            </div> 
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="GetAllBooks">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
