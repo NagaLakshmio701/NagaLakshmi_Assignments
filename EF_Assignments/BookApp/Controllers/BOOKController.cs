@@ -33,8 +33,8 @@ namespace BookApp.Controllers
         }
         [HttpPost]
 
-        [Route("Add")]
-
+/*        [Route("Add")]
+*/
         public IActionResult AddBook(Book book)
         {
 
@@ -42,7 +42,7 @@ namespace BookApp.Controllers
             {
                bookAppContext.Books.Add(book);
                bookAppContext.SaveChanges();
-               return RedirectToAction("GetAllBooks");
+                return RedirectToAction("GetAllBooks");
             }
             else
             {
