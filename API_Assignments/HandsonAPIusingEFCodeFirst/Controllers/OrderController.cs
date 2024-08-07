@@ -41,6 +41,7 @@ namespace HandsonAPIusingEFCodeFirst.Controllers
         [Route("MakeOrder")]
         public IActionResult MakeOrder(Order order)
         {
+            order.OrderID = Guid.NewGuid();
             _orderRepository.MakeOrder(order);
             return StatusCode(201, order);
         }

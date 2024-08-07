@@ -20,9 +20,9 @@ namespace HandsonAPIusingEFCodeFirst.Entities
         public int UserId { get; set; }
 
         [JsonIgnore] // Ignore for serialization and deserialization
-        public Product Product { get; set; }
+        public Product? Product { get; set; }
 
         [JsonIgnore] // Ignore for serialization and deserialization
-        public User User { get; set; }
+        public User? User { get; set; }
     }
 }
