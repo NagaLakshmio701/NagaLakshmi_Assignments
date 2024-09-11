@@ -7,11 +7,16 @@ namespace HandsonAPIusingEFCodeFirst.Repositories
     {
         private readonly ECommContext _context;
 
+        public ProductRepository(ECommContext context)
+        {
+            this._context = context;
+        }
+/*
         public ProductRepository()
         {
             _context = new ECommContext ();
         }
-
+*/
         public void Add(Product product)
         {
             _context.Products.Add(product);

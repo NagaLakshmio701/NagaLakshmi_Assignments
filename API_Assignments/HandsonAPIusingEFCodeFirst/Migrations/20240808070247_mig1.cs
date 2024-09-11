@@ -5,7 +5,7 @@
 namespace HandsonAPIusingEFCodeFirst.Migrations
 {
     /// <inheritdoc />
-    public partial class mig5 : Migration
+    public partial class mig1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

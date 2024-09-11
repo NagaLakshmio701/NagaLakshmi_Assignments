@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using HandsonAPIusingEFCodeFirst.Entities;
 using HandsonAPIusingEFCodeFirst.Repositories;
+using Azure.Core.Pipeline;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HandsonAPIusingEFCodeFirst.Controllers
 {
@@ -11,15 +13,23 @@ namespace HandsonAPIusingEFCodeFirst.Controllers
     {
         private readonly IProductRepository _productRepository;
 
-        public ProductController()
+
+        public ProductController(IProductRepository productRepository)
+        {
+            _productRepository = productRepository;
+        }
+
+        /*public ProductController()
         {
             _productRepository = new ProductRepository();
         }
-
+*/
 
 
         [HttpGet]
         [Route ("GetAllProducts")]
+        [Authorize(Roles = "Admin")]
+
         public IActionResult GetAllProduct()
         {
             var products= _productRepository.GetAllProducts();
@@ -42,7 +52,7 @@ namespace HandsonAPIusingEFCodeFirst.Controllers
         [HttpPost]
         [Route ("AddProduct")]
 
-        public IActionResult Add(Product product)
+        public IActionResult Add([FromBody]Product product)
         {
             _productRepository.Add(product);
             return StatusCode(200, product);

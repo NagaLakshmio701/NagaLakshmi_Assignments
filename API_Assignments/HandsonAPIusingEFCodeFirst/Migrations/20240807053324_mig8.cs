@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HandsonAPIusingEFCodeFirst.Migrations
 {
     /// <inheritdoc />
-    public partial class mig1 : Migration
+    public partial class mig8 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

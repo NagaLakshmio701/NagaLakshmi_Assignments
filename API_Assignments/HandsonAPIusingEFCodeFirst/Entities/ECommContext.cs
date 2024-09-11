@@ -6,6 +6,14 @@ namespace HandsonAPIusingEFCodeFirst.Entities
     public class ECommContext:DbContext 
     {
         //Entity Set 
+        public IConfiguration configuration;
+
+        public ECommContext(IConfiguration configuration)
+        {
+            
+            this.configuration= configuration;
+
+        }
 
         public DbSet<User> Users { get; set; }
         public DbSet<Product> Products { get; set; }
@@ -20,8 +28,11 @@ namespace HandsonAPIusingEFCodeFirst.Entities
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=DAUGHTER-OF-SRI;Initial Catalog=Ecomm1;Integrated Security=True;Trust Server Certificate=True");
-
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("EcommConnection"));
+/*            optionsBuilder.UseSqlServer("Data Source=DAUGHTER-OF-SRI;Initial Catalog=Ecomm2;Integrated Security=True;Trust Server Certificate=True");
+ *            
+ *            op
+*/
         }
 
 

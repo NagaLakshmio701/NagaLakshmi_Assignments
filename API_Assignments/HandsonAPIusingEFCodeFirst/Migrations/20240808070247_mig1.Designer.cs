@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HandsonAPIusingEFCodeFirst.Migrations
 {
     [DbContext(typeof(ECommContext))]
-    [Migration("20240806182403_mig3")]
-    partial class mig3
+    [Migration("20240808070247_mig1")]
+    partial class mig1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

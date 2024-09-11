@@ -7,10 +7,15 @@ namespace HandsonAPIusingEFCodeFirst.Repositories
     {
         private readonly ECommContext UserOBJ;
 
-        public UserRepository()
+        public UserRepository(ECommContext userOBJ)
+        {
+            UserOBJ = userOBJ;
+        }
+
+       /* public UserRepository()
         {
             UserOBJ = new ECommContext();
-        }
+        }*/
 
         public void Register(User user)
         {

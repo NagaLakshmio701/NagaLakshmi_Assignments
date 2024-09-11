@@ -5,17 +5,25 @@ namespace HandsonAPIusingEFCodeFirst.Repositories
     public class OrderRepository: IOrderRepository
     {
 
+
         private readonly ECommContext _context;
 
-        public OrderRepository()
+        public OrderRepository(ECommContext context)
         {
-            _context = new ECommContext();
+            _context = context;
         }
 
-        public List<Order> GetAllOrders(Guid OrderId)
+       /* public OrderRepository()
+        {
+            _context = new ECommContext();
+        }*/
+
+        public List<Order> GetAllOrders()
         {
             return _context.Orders.ToList();
         }
+
+
 
         public Order GetOrder(Guid OrderId)
         {

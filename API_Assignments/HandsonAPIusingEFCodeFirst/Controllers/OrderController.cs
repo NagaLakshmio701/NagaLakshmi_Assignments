@@ -3,6 +3,7 @@ using HandsonAPIusingEFCodeFirst.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using HandsonAPIusingEFCodeFirst.Entities;
+using HandsonAPIusingEFCodeFirst.DTOS;
 
 namespace HandsonAPIusingEFCodeFirst.Controllers
 {
@@ -18,12 +19,13 @@ namespace HandsonAPIusingEFCodeFirst.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllOrders/{orderId}")]
-        public IActionResult GetAllOrders(Guid orderId)
+        [Route("GetAllOrders")]
+        public IActionResult GetAllOrders()
         {
-            var orders = _orderRepository.GetAllOrders(orderId);
-            return Ok(orders);
+            var orders = _orderRepository.GetAllOrders;
+            return StatusCode(200, orders);
         }
+
 
         [HttpGet]
         [Route("GetOrder/{orderId}")]
@@ -37,13 +39,28 @@ namespace HandsonAPIusingEFCodeFirst.Controllers
             return NotFound("Order not found");
         }
 
-        [HttpPost]
-        [Route("MakeOrder")]
-        public IActionResult MakeOrder(Order order)
+        /*  [HttpPost]
+          [Route("MakeOrder")]
+          public IActionResult MakeOrder(Order order)
+          {
+              order.OrderID = Guid.NewGuid();
+              _orderRepository.MakeOrder(order);
+              return StatusCode(201, order);
+          }*/
+
+        [HttpPost, Route("MakeOrder")]
+        public IActionResult MakeOrder(OrderDTO orderDto)
         {
-            order.OrderID = Guid.NewGuid();
+            //assing orderDto to order entity
+            var order = new Order()
+            {
+                OrderID = Guid.NewGuid(),
+                ProductId = orderDto.ProductId,
+                UserId = orderDto.UserId
+            };
+
             _orderRepository.MakeOrder(order);
-            return StatusCode(201, order);
+            return Ok(order);
         }
     }
 }

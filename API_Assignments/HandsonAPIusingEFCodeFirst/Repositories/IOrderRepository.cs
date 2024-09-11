@@ -7,7 +7,7 @@ namespace HandsonAPIusingEFCodeFirst.Repositories
         void MakeOrder(Order order);
         Order GetOrder(Guid  OrderId);
 
-        List<Order> GetAllOrders(Guid OrderId);
+        List<Order> GetAllOrders();
 
 
 
